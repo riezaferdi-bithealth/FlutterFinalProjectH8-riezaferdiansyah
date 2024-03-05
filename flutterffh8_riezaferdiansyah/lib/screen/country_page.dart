@@ -4,8 +4,8 @@ import 'package:flutterffh8_riezaferdiansyah/widgets/box_container.dart';
 import 'package:flutterffh8_riezaferdiansyah/widgets/category_top_bar.dart';
 import 'package:flutterffh8_riezaferdiansyah/widgets/list_tile_news.dart';
 
-class bodyApp extends StatelessWidget {
-  const bodyApp({super.key});
+class categoryApp extends StatelessWidget {
+  const categoryApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,8 +14,6 @@ class bodyApp extends StatelessWidget {
       child: Column(
         children: [
           topBarCategory(),
-          BoxFeed(),
-          allNews(),
           listTileNews(),
         ],
       ),

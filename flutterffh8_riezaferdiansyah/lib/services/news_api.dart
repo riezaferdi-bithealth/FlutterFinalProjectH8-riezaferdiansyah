@@ -1,5 +1,5 @@
 import '../api/models/news_models.dart';
-import 'package:flutterffh8_riezaferdiansyah/utils/enums/country.dart';
+import 'package:flutterffh8_riezaferdiansyah/utilities/enums/country.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'dart:async';
