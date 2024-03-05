@@ -1,11 +1,11 @@
-import '../models/news_models.dart';
+import '../models/models.dart';
 import 'package:flutter/material.dart';
 
 class ArticlesDetailProvider extends ChangeNotifier {
   // Stream and Sink Process di sini !!!
-  Articles? selectedArticles;
+  newsModel? selectedArticles;
 
-  void selectArticles(Articles data) {
+  void selectArticles(newsModel data) {
     selectedArticles = data;
     notifyListeners();
   }

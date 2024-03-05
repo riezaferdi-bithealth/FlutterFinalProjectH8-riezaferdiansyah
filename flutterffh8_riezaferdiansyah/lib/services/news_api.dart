@@ -1,4 +1,4 @@
-import '../api/models/news_models.dart';
+import '../api/models/models.dart';
 import 'package:flutterffh8_riezaferdiansyah/utilities/enums/country.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
@@ -8,21 +8,23 @@ class NewsAPI {
   static const _baseUrl = 'newsapi.org';
   static const _apiKey = '';
 
-  Future<List<Articles>> fetchArticles({
+  Future<List<newsModel>> fetchnewsModel({
     String country = '',
     String category = '',
-    String q = '',
     String sources = '',
+    String q = '',
+    int pageSize = 10,
   }) async {
     try {
-      List<Articles> articles = <Articles>[];
+      List<newsModel> NewsModel = <newsModel>[];
 
       var queryParams = {
-        'apiKey': _apiKey,
-        'country': sources.isNotEmpty ? "" : country,
+        'country': country,
         'category': category,
         'sources': sources,
         'q': q,
+        'pageSize': pageSize,
+        'apiKey': _apiKey,
       };
 
       final url = Uri.https(_baseUrl, 'v2/top-headlines', queryParams);
@@ -32,7 +34,7 @@ class NewsAPI {
 
       final list = json.decode(response.body) as List<dynamic>;
       //print(list);
-      return list.map((index) => Articles.fromJson(index)).toList();
+      return list.map((index) => newsModel.fromJson(index)).toList();
     } catch (error) {
       throw error.toString();
     }
