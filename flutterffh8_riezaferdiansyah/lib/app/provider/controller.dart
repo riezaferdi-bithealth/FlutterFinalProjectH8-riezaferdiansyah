@@ -1,4 +1,4 @@
-import '../models/models.dart';
+import '../../data/api/models/models.dart';
 import 'package:flutter/material.dart';
 
 class ArticlesDetailProvider extends ChangeNotifier {
