@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterffh8_riezaferdiansyah/app/screen/search_page.dart';
 
 class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
   CustomAppBar({Key? key})
@@ -19,7 +20,15 @@ class _CustomAppBarState extends State<CustomAppBar> {
       leading: Icon(Icons.menu, size: 30),
       title: Text("NEWS API"),
       actions: <Widget>[
-        Icon(Icons.search, size: 30),
+        GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => SearchPage()),
+            );
+          },
+          child: Icon(Icons.search, size: 30),
+        ),
         Icon(Icons.account_circle, size: 30)
       ],
     );

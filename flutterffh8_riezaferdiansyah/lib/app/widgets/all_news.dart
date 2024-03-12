@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutterffh8_riezaferdiansyah/widgets/list_tile_news.dart';
+import 'package:flutterffh8_riezaferdiansyah/app/widgets/list_tile_news.dart';
 
 class allNews extends StatelessWidget {
   const allNews({super.key});
@@ -12,29 +12,32 @@ class allNews extends StatelessWidget {
           padding: const EdgeInsets.fromLTRB(16, 20, 16, 0),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.values[3],
-            children: const <Widget>[
-              Text(
+            children: <Widget>[
+              const Text(
                 'All News',
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              Row(
-                children: [
-                  Text(
-                    'See All',
-                    style: TextStyle(
-                      color: Colors.blue,
-                      //height: 3,
-                      fontSize: 15,
+              GestureDetector(
+                onTap: () {},
+                child: const Row(
+                  children: [
+                    Text(
+                      'See All',
+                      style: TextStyle(
+                        color: Colors.blue,
+                        //height: 3,
+                        fontSize: 15,
+                      ),
                     ),
-                  ),
-                  Icon(
-                    Icons.keyboard_arrow_right,
-                    color: Colors.blue,
-                  ),
-                ],
+                    Icon(
+                      Icons.keyboard_arrow_right,
+                      color: Colors.blue,
+                    ),
+                  ],
+                ),
               ),
             ],
           ),

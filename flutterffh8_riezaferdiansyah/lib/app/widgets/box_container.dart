@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutterffh8_riezaferdiansyah/screen/detail_page.dart';
+import 'package:flutterffh8_riezaferdiansyah/app/screen/detail_page.dart';
 
 class BoxFeed extends StatelessWidget {
   const BoxFeed({super.key});

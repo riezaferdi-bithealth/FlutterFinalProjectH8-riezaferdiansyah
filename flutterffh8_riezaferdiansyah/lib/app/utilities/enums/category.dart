@@ -6,7 +6,7 @@ enum Category {
   technology,
   sports,
   health,
-  entertainment
+  entertainment,
 }
 
 extension CategoryExtension on Category {

@@ -1,14 +1,14 @@
-import 'package:flutterffh8_riezaferdiansyah/app/utilities/enums/category.dart';
+import 'package:flutterffh8_riezaferdiansyah/app/utilities/enums/channel.dart';
 import 'package:flutter/material.dart';
 
-class topBarCategory extends StatefulWidget {
-  const topBarCategory({super.key});
+class topBarChannel extends StatefulWidget {
+  const topBarChannel({super.key});
 
   @override
-  State<topBarCategory> createState() => _topBarCategoryState();
+  State<topBarChannel> createState() => _topBarChannelState();
 }
 
-class _topBarCategoryState extends State<topBarCategory>
+class _topBarChannelState extends State<topBarChannel>
     with SingleTickerProviderStateMixin {
   TabController? _tabController;
 
@@ -18,7 +18,7 @@ class _topBarCategoryState extends State<topBarCategory>
 
   @override
   void initState() {
-    _tabController = TabController(length: 7, vsync: this);
+    _tabController = TabController(length: 9, vsync: this);
     _tabController?.addListener(_handleTabSelection);
 
     super.initState();
@@ -34,32 +34,6 @@ class _topBarCategoryState extends State<topBarCategory>
   Widget build(BuildContext context) {
     return tabTopBarView();
   }
-  // Widget build(BuildContext context) {
-  //   return SizedBox(
-  //     height: 46,
-  //     child: ListView(
-  //       padding: const EdgeInsets.only(bottom: 16),
-  //       scrollDirection: Axis.horizontal,
-  //       shrinkWrap: true,
-  //       children: <Widget>[
-  //         SizedBox(
-  //           width: 16,
-  //         ),
-  //         // _textBoxDefault(Category.all.name),
-  //         _textBoxDefault(Category.general.name),
-  //         _textBoxCategory(Category.science.name),
-  //         _textBoxCategory(Category.business.name),
-  //         _textBoxCategory(Category.technology.name),
-  //         _textBoxCategory(Category.sports.name),
-  //         _textBoxCategory(Category.health.name),
-  //         _textBoxCategory(Category.entertainment.name),
-  //         SizedBox(
-  //           width: 16,
-  //         ),
-  //       ],
-  //     ),
-  //   );
-  // }
 
   Widget tabTopBarView() {
     return TabBar(
@@ -70,25 +44,31 @@ class _topBarCategoryState extends State<topBarCategory>
       isScrollable: true,
       tabs: [
         Tab(
-          text: Category.general.name,
+          text: Channel.bbcNews.name,
         ),
         Tab(
-          text: Category.science.name,
+          text: Channel.timesIndia.name,
         ),
         Tab(
-          text: Category.business.name,
+          text: Channel.politico.name,
         ),
         Tab(
-          text: Category.technology.name,
+          text: Channel.washingtonPost.name,
         ),
         Tab(
-          text: Category.sports.name,
+          text: Channel.reuters.name,
         ),
         Tab(
-          text: Category.health.name,
+          text: Channel.cnn.name,
         ),
         Tab(
-          text: Category.entertainment.name,
+          text: Channel.nbcNews.name,
+        ),
+        Tab(
+          text: Channel.hills.name,
+        ),
+        Tab(
+          text: Channel.foxNews.name,
         ),
         // Tab(
         //   text: 'Sale',

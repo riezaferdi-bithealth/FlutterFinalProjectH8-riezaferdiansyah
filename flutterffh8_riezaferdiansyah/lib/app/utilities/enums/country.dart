@@ -1,4 +1,12 @@
-enum Country { india, usa, mexico, uae, nz, israel, indonesia }
+enum Country {
+  india,
+  usa,
+  mexico,
+  uae,
+  nz,
+  israel,
+  indonesia,
+}
 
 extension CountryExtension on Country {
   String get name {

@@ -1,5 +1,5 @@
-import '../api/models/models.dart';
-import 'package:flutterffh8_riezaferdiansyah/utilities/enums/country.dart';
+import '../models/models.dart';
+import 'package:flutterffh8_riezaferdiansyah/app/utilities/enums/country.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'dart:async';

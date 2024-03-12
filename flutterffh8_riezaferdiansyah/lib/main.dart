@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutterffh8_riezaferdiansyah/screen/home_page.dart';
-import 'package:flutterffh8_riezaferdiansyah/screen/category_page.dart';
-import 'package:flutterffh8_riezaferdiansyah/widgets/bottom_nav_bar.dart';
-import 'package:flutterffh8_riezaferdiansyah/widgets/top_bar.dart';
-import 'screen/blank.dart';
+import 'package:flutterffh8_riezaferdiansyah/app/screen/channel_page.dart';
+import 'package:flutterffh8_riezaferdiansyah/app/screen/country_page.dart';
+import 'package:flutterffh8_riezaferdiansyah/app/screen/home_page.dart';
+import 'package:flutterffh8_riezaferdiansyah/app/screen/category_page.dart';
+import 'package:flutterffh8_riezaferdiansyah/app/widgets/bottom_nav_bar.dart';
+import 'package:flutterffh8_riezaferdiansyah/app/widgets/drawer.dart';
+import 'package:flutterffh8_riezaferdiansyah/app/widgets/top_bar.dart';
 
 void main() {
   runApp(const MainApp());
@@ -38,7 +40,7 @@ class _MainAppState extends State<MainApp> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         //appBar: CustomAppBar(),
-        drawer: Drawer(),
+        drawer: new SideDrawer(),
         body: screens.elementAt(selectedIndex),
         bottomNavigationBar: BottomBar(
           selectedIndex: selectedIndex,
@@ -80,8 +82,13 @@ class Category extends StatelessWidget {
 class Country extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text("Country"),
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          TopBar(),
+          countryApp(),
+        ],
+      ),
     );
   }
 }
@@ -89,8 +96,13 @@ class Country extends StatelessWidget {
 class Channel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text("Channel"),
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          TopBar(),
+          channelApp(),
+        ],
+      ),
     );
   }
 }
