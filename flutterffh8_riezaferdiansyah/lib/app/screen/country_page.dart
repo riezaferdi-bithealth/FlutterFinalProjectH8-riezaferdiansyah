@@ -7,14 +7,11 @@ class countryApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(top: 24),
-      child: Column(
-        children: [
-          topBarCountry(),
-          listTileNews(),
-        ],
-      ),
+    return Column(
+      children: [
+        topBarCountry(),
+        // listTileNews(),
+      ],
     );
   }
 }

@@ -1,7 +1,7 @@
 class newsModel {
   String? status;
   String? totalResults;
-  ListArticles? articles;
+  List<ListArticles>? articles;
 
   newsModel({
     this.status,
@@ -12,7 +12,7 @@ class newsModel {
   factory newsModel.fromJson(Map<String, dynamic> json) => newsModel(
         status: json["status"],
         totalResults: json["totalResults"],
-        articles: ListArticles.fromJson(json["articles"]),
+        articles: List<ListArticles>.from(json['articles'].map((x) => ListArticles.fromJson(x))),
       );
 }
 

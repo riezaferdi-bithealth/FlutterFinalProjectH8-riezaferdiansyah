@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutterffh8_riezaferdiansyah/app/widgets/channel_top_bar.dart';
 import 'package:flutterffh8_riezaferdiansyah/app/widgets/list_tile_news.dart';
 
-class channelApp extends StatelessWidget {
+class channelApp extends StatelessWidget { //
   const channelApp({super.key});
 
   @override

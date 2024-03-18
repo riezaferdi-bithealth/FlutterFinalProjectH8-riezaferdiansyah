@@ -36,24 +36,26 @@ extension ChannelExtension on Channel {
     }
   }
 
-  // String get ChannelCode {
-  //   switch (this) {
-  //     case Channel.bbcNews:
-  //       return 'in';
-  //     case Channel.bbcNews:
-  //       return 'in';
-  //     case Channel.politico:
-  //       return 'politico';
-  //     case Channel.washingtonPost:
-  //       return 'mx';
-  //     case Channel.reuters:
-  //       return 'reuters';
-  //     case Channel.cnn:
-  //       return 'cnn';
-  //     case Channel.nbcNews:
-  //       return 'isr';
-  //     case Channel.hills:
-  //       return 'id';
-  //   }
-  // }
+  String get channelCode {
+    switch (this) {
+      case Channel.bbcNews:
+        return 'bbc-news';
+      case Channel.timesIndia:
+        return 'the-times-of-india';
+      case Channel.politico:
+        return 'politico';
+      case Channel.washingtonPost:
+        return 'the-washington-post';
+      case Channel.reuters:
+        return 'reuters';
+      case Channel.cnn:
+        return 'cnn';
+      case Channel.nbcNews:
+        return 'nbc-news';
+      case Channel.hills:
+        return 'the-hill';  // TODO not found hills
+      case Channel.foxNews:
+        return 'fox-news';
+    }
+  }
 }

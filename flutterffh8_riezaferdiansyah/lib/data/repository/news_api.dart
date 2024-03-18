@@ -4,16 +4,25 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'dart:async';
 
+// void main() {
+//   NewsAPI().fetchnewsModel();
+// }
+
 class NewsAPI {
   static const _baseUrl = 'newsapi.org';
-  static const _apiKey = '';
+  static const _apiKey = '6a2b4f8d549e4e8a9c6140a496e495e0';
 
   Future<List<newsModel>> fetchnewsModel({
-    String country = '',
-    String category = '',
-    String sources = '',
-    String q = '',
-    int pageSize = 10,
+    // String country = 'id',
+    // String category = '',
+    // String sources = '',
+    // String q = '',
+    // String pageSize = "2",
+    String? country,
+    String? category,
+    String? sources,
+    String? q,
+    String? pageSize,
   }) async {
     try {
       List<newsModel> NewsModel = <newsModel>[];
@@ -24,6 +33,7 @@ class NewsAPI {
         'sources': sources,
         'q': q,
         'pageSize': pageSize,
+        // 'apiKey': _apiKey,
         'apiKey': _apiKey,
       };
 
@@ -32,10 +42,12 @@ class NewsAPI {
 
       final decodedData = response.body;
 
-      final list = json.decode(response.body) as List<dynamic>;
-      //print(list);
+      final list = json.decode(decodedData)['articles'] as List<dynamic>;
+      // print(list);
+      // return list.where((element) => element['title']!= null).toList();
       return list.map((index) => newsModel.fromJson(index)).toList();
     } catch (error) {
+      print("masuk error");
       throw error.toString();
     }
   }

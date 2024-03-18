@@ -82,13 +82,11 @@ class Category extends StatelessWidget {
 class Country extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        children: [
-          TopBar(),
-          countryApp(),
-        ],
-      ),
+    return Column(
+      children: [
+        TopBar(),
+        countryApp(),
+      ],
     );
   }
 }
