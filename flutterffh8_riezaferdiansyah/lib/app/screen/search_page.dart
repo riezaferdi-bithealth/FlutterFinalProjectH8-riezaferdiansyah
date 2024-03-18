@@ -49,13 +49,13 @@ class _SearchPageState extends State<SearchPage> {
           child: Column(
             children: [
               SearchTopBar(),
-              Column(
-                children: List.generate(searchResult.length, (index) {
-                  return ListTile(
-                    title: Text(searchResult[index]),
-                  );
-                }),
-              ),
+              // Column(
+              //   children: List.generate(searchResult.length, (index) {
+              //     return ListTile(
+              //       title: Text(searchResult[index]),
+              //     );
+              //   }),
+              // ),
             ],
           ),
         ),

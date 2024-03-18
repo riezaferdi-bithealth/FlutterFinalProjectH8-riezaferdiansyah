@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterffh8_riezaferdiansyah/app/widgets/list_tile_news_main.dart';
 
 class SearchTopBar extends StatefulWidget {
   const SearchTopBar({super.key});
@@ -21,43 +22,57 @@ class _SearchTopBarState extends State<SearchTopBar> {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(top: 0, left: 16.0, right: 16.0),
-      child: Form(
-        child: TextFormField(
-          // validator: _validatorForm,
-          onChanged: onQueryChanged,
-          controller: _searchController,
-          style: TextStyle(
-            fontSize: 14,
-            color: Colors.black,
-          ),
-          decoration: InputDecoration(
-            //fillColor: systemAccent20Color,
-            //hoverColor: systemWhiteColor,
-            // prefixIcon: Icon(Icons.search),
-            suffixIcon: Icon(Icons.search),
-            filled: true,
-            border: OutlineInputBorder(borderRadius: BorderRadius.circular(6)),
-            focusedBorder: OutlineInputBorder(
-                borderSide: const BorderSide(
-                  color: Colors.blue,
-                  width: 2,
+      child: Column(
+        children: [
+          Form(
+            child: TextFormField(
+              // validator: _validatorForm,
+              onChanged: onQueryChanged,
+              controller: _searchController,
+              style: TextStyle(
+                fontSize: 14,
+                color: Colors.black,
+              ),
+              decoration: InputDecoration(
+                //fillColor: systemAccent20Color,
+                //hoverColor: systemWhiteColor,
+                // prefixIcon: Icon(Icons.search),
+                suffixIcon: Icon(Icons.search),
+                filled: true,
+                border:
+                    OutlineInputBorder(borderRadius: BorderRadius.circular(6)),
+                focusedBorder: OutlineInputBorder(
+                    borderSide: const BorderSide(
+                      color: Colors.blue,
+                      width: 2,
+                    ),
+                    borderRadius: BorderRadius.circular(6)),
+                enabledBorder: OutlineInputBorder(
+                    borderSide: const BorderSide(
+                      color: Colors.grey,
+                    ),
+                    borderRadius: BorderRadius.circular(6)),
+                hintStyle: TextStyle(
+                  fontSize: 14,
+                  color: Colors.black,
                 ),
-                borderRadius: BorderRadius.circular(6)),
-            enabledBorder: OutlineInputBorder(
-                borderSide: const BorderSide(
-                  color: Colors.grey,
-                ),
-                borderRadius: BorderRadius.circular(6)),
-            hintStyle: TextStyle(
-              fontSize: 14,
-              color: Colors.black,
+                hintText: "Search",
+                isDense: true,
+                // contentPadding: ,
+                // errorText: "Value Can't Be Empty",
+              ),
             ),
-            hintText: "Search",
-            isDense: true,
-            // contentPadding: ,
-            // errorText: "Value Can't Be Empty",
           ),
-        ),
+          _searchController.text.isNotEmpty
+              ? listTileNewsMain(
+                  "",
+                  "",
+                  "",
+                  _searchController.text,
+                  "10",
+                )
+              : SizedBox.shrink(),
+        ],
       ),
     );
   }

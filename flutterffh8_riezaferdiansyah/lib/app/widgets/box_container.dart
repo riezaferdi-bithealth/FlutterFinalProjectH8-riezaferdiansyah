@@ -8,11 +8,11 @@ class BoxFeed extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => DetailPage(),
-            ));
+        // Navigator.push(
+        //     context,
+        //     MaterialPageRoute(
+        //       builder: (context) => DetailPage(),
+        //     ));
       },
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
